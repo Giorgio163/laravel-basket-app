@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: grey;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 20px auto 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.catalogue-preview {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.catalogue-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #111;
+    padding: 15px;
+    text-align: center;
+    margin-top: auto;
+    color: #ccc;
+}
+
+.basket-image {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .cta-text {
+        font-size: 0.9rem;
+    }
+}
