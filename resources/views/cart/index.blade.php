@@ -48,7 +48,7 @@
                 <p class="total">Total: ${{ number_format(array_sum(array_map(function ($item) {
                     return $item['price'] * $item['quantity'];
                 }, $cart)), 2) }}</p>
-                <a href="" class="checkout-button">Proceed to Checkout</a>
+                <a href="{{ route('checkout') }}" class="checkout-button">Proceed to Checkout</a>
             </div>
         @else
             <p class="empty-cart-message">Your cart is empty.</p>
