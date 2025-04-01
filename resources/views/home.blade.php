@@ -12,6 +12,9 @@
 <body>
 
 <div class="container">
+    @extends('layouts.app')
+
+    @section('content')
     <header>
         <h1>Welcome to Our Catalogue</h1>
         <p>Explore our products and services</p>
@@ -26,9 +29,7 @@
         </div>
     </main>
 </div>
-<footer>
-    <p>&copy; 2025 Basket App | All Rights Reserved</p>
-</footer>
 </body>
 
 </html>
+@endsection
