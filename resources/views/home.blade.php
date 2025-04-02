@@ -20,6 +20,19 @@
                             <p class="cta-text">Check out our latest products in the catalogue.</p>
                         </a>
                     </div>
+                        <h2>Your Orders</h2>
+                        @if(!empty($orders) && !$orders->isEmpty())
+                            <ul class="order-status">
+                                @foreach($orders as $order)
+                                    <li>
+                                        <strong>Order #{{ $order->id }}</strong> - {{ $order->created_at->format('d M Y') }}<br>
+                                        <span>Total: ${{ number_format($order->total_price, 2) }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p>You haven't placed any orders yet.</p>
+                        @endif
                 </div>
             </div>
         </div>
