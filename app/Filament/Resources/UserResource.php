@@ -39,11 +39,17 @@ class UserResource extends Resource
                     ->required()
                     ->hiddenOn('edit'),
                 Select::make('roles')
-                    ->label('Role')
-                    ->options(Role::all()->pluck('name', 'name')->toArray())
-                    ->searchable()
-                    ->preload()
-                    ->afterStateUpdated(fn ($state, $record) => $record->syncRoles($state)),
+                    ->options(Role::all()->pluck('name', 'name'))
+                    ->required()
+                    ->afterStateHydrated(function ($component, $state) {
+                        if ($record = $component->getRecord()) {
+                            $component->state(
+                                collect($state)
+                                    ->merge($record->roles->pluck('name')->toArray())
+                                    ->toArray()
+                            );
+                        }
+                    }),
             ]);
     }
 
@@ -85,12 +91,5 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
-    }
-    public static function saved(User $user, array $data): void
-    {
-
-        if (isset($data['roles'])) {
-            $user->syncRoles([$data['roles']]);
-        }
     }
 }
