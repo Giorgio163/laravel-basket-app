@@ -75,4 +75,9 @@ class OrderResource extends Resource
             'edit' => Pages\EditOrder::route('/{record}/edit'),
         ];
     }
+
+    public static function canCreate(): bool
+    {
+        return false; // This removes the "Create" button
+    }
 }
