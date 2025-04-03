@@ -20,8 +20,8 @@ This is a Laravel-powered e-commerce platform focused on basketball apparel and 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Giorgio163/laravel-basket-app.git
    cd laravel-basketball-store
+   git clone https://github.com/Giorgio163/laravel-basket-app.git
    ```
 
 2. Install dependencies:
