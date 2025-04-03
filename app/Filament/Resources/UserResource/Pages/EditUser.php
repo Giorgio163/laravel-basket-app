@@ -20,9 +20,10 @@ class EditUser extends EditRecord
             'password' => !empty($data['password']) ? Hash::make($data['password']) : $user->password,
         ]);
 
-        $role = Role::findByName($data['roles']);
-        if ($role) {
-            $user->syncRoles([$role]);
+        $roles = (array) $data['roles'];
+
+        if (!empty($roles)) {
+            $user->syncRoles($roles);
         }
 
         return $user;
